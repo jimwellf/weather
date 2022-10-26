@@ -1,0 +1,88 @@
+﻿<Page
+    x:Class="weather.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:weather"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+   
+
+    <Grid Background="CadetBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Row="0" Margin="50">
+            <TextBlock
+                Text="Country, City"
+                FontSize="22"
+                TextAlignment="Center"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                <Image x:Name="Icon" Source="Assets/images/sun.png" Width="80"/>
+
+                <RelativePanel x:Name="DegreeType">
+                    <TextBlock
+                    x:Name="Degrees"
+                    Text="22°"
+                    FontSize="80"
+                    FontWeight="Light"
+                    Padding="10"
+                    />
+
+                    <TextBlock
+                        x:Name="Celsium"
+                        Text="C"
+                        FontSize="22"
+                        Padding="0 40 0 0"
+                        
+                        RelativePanel.RightOf="Degrees"
+                        />
+                    <TextBlock
+                        x:Name="Fahrenheit"
+                        Text="F"
+                        FontSize="22"
+                        
+                        RelativePanel.RightOf="Degrees"
+                        RelativePanel.Below="Celsium"
+                        />
+                </RelativePanel>
+
+            </StackPanel>
+
+            <TextBlock x:Name="Weather"
+                       Text="Sunny"
+                       HorizontalAlignment="Center"
+                       FontSize="28"
+                       FontWeight="Light"
+                       Padding="0 0 0 0" />
+
+            <TextBlock x:Name="UpdateTime"
+                       Text="Updated as of 2:31 PM"
+                       HorizontalAlignment="Center"/>
+
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                     
+                    <TextBlock Text="Feels like" Padding="0 0 50 0"></TextBlock>
+                    <TextBlock Text="20°"></TextBlock>
+
+                    <TextBlock Text="Wind "></TextBlock>
+                    <TextBlock Text="5 km/h"></TextBlock>
+
+                    <TextBlock Text="Feels like "></TextBlock>
+                    <TextBlock Text="20°"></TextBlock>
+                    
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"></StackPanel>
+            </StackPanel>
+
+        </StackPanel>
+        
+    </Grid>
+    
+</Page>
