@@ -96,7 +96,7 @@
                 <StackPanel Orientation="Horizontal">
 
                     <Button
-                        Name="WeatherCard"
+                        Name="WeatherCardButton"
                         Style="{ StaticResource WeatherCard }"
                         Click="onClick">
                         <StackPanel>
@@ -126,6 +126,21 @@
                     </Button>
 
                 </StackPanel>
+
+                <ListBox x:Name="ListBox1" Margin="5"
+                    Width="450" Height="200" HorizontalAlignment="Left"
+                    ItemsSource="{Binding}" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Margin="2">
+                                <TextBlock Text="Artist:" Margin="2" />
+                                <TextBlock Text="{Binding Artist}" Margin="2" />
+                                <TextBlock Text="CD:" Margin="10,2,0,2" />
+                                <TextBlock Text="{Binding Name}" Margin="2" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
 
                 <ListBox x:Name="WeatherCardListBox"
                          Margin="5"

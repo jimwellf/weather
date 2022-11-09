@@ -15,36 +15,44 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// Il modello di elemento Pagina vuota è documentato all'indirizzo https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x410
-
 namespace weather
 {
-    /// <summary>
-    /// Pagina vuota che può essere usata autonomamente oppure per l'esplorazione all'interno di un frame.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
-        public ObservableCollection<WeatherCard> MyWeatherCard = new ObservableCollection<WeatherCard>();
+        public ObservableCollection<WeatherCard> WeatherList = new ObservableCollection<WeatherCard>();
+
         public MainPage()
         {
             this.InitializeComponent();
+
+            WeatherList.Add(new WeatherCard(new DateTime(2022, 1, 1), new Image(), "Weather Now", "Weather Later", "Weather"));
+            WeatherList.Add(new WeatherCard(new DateTime(2022, 2, 2), new Image(), "Weather Now", "Weather Later", "Weather"));
+            WeatherList.Add(new WeatherCard(new DateTime(2022, 3, 3), new Image(), "Weather Now", "Weather Later", "Weather"));
+            WeatherList.Add(new WeatherCard(new DateTime(2022, 4, 4), new Image(), "Weather Now", "Weather Later", "Weather"));
+            WeatherList.Add(new WeatherCard(new DateTime(2022, 5, 5), new Image(), "Weather Now", "Weather Later", "Weather"));
         }
 
         public class WeatherCard
         {
             public DateTime Date { get; set; }
-            public string Name { get; set; }
-            public DateTime ReleaseDate { get; set; }
+            public Image WeatherIcon { get; set; }
+            public String WeatherNow { get; set; }
+            public String WeatherLater { get; set; }
+            public String Weather { get; set; }
+
             public WeatherCard() { }
+
             public WeatherCard(DateTime date, Image weatherIcon, String weatherNow, String weatherLater, String weather)
             {
                 Date = date;
-
+                WeatherIcon = weatherIcon;
+                WeatherNow = weatherNow;
+                WeatherLater = weatherLater;
+                Weather = weather;
             }
             public override string ToString()
             {
-                return Name + " by " + Artist + ", Released: " +
-                ReleaseDate.ToShortDateString();
+                return "Weather: " + Date.ToShortDateString() + WeatherIcon + WeatherIcon + WeatherLater + Weather;
             }
         }
 
