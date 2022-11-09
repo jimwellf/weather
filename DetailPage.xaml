@@ -1,0 +1,88 @@
+﻿<Page
+    x:Class="weather.DetailPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:weather"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="CadetBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Row="0" HorizontalAlignment="Center" Margin="30 100 10 30">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Hourly" FontSize="22"></TextBlock>
+            </StackPanel>
+
+            <MenuFlyoutSeparator Padding="0 10 0 0"/>
+
+            <StackPanel Orientation="Horizontal">
+
+                <StackPanel
+                    Orientation="Vertical"
+                    Margin="0 10 50 10">
+
+                    <Image
+                            Source="Assets/images/sun.png"
+                            Width="35"
+                            />
+
+                    <TextBlock
+                            Text="27°"
+                            FontSize="25"
+                            Padding="0 0 0 0"/>
+
+                    <TextBlock
+                            Text="Mostly Clear"
+                            Padding="0 3 0 0"
+                            FontSize="12"/>
+
+                    <TextBlock
+                            Text="6%"
+                            Padding="0 25 0 0"
+                            FontSize="12"/>
+
+                    <TextBlock
+                            Text="6 km/h"
+                            Padding="0 3 0 0"
+                            FontSize="12"/>
+
+                </StackPanel>
+
+            </StackPanel>
+
+            <MenuFlyoutSeparator Padding="0 10 0 0"/>
+
+            <StackPanel Orientation="Horizontal">
+            </StackPanel>
+
+            <Button HorizontalAlignment="Center" Content="Home" Click="onClick" Margin="10"></Button>
+        </StackPanel>
+        <!--
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
+
+            <StackPanel Orientation="Vertical">
+                <MenuFlyoutSeparator Padding="0 10 0 0"/>
+
+                <TextBlock Text="Day"></TextBlock>
+                <TextBlock Text="Expect partly sunny skies. The high will be 22°"></TextBlock>
+                <TextBlock Text="Night"></TextBlock>
+                <TextBlock Text="The skies will be partly cloudy. The low will be 14°"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <MenuFlyoutSeparator Padding="0 10 0 0"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <MenuFlyoutSeparator Padding="0 10 0 0"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <MenuFlyoutSeparator Padding="0 10 0 0"/>
+            </StackPanel>
+        </StackPanel> -->
+    </Grid>
+</Page>
